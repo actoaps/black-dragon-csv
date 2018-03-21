@@ -29,7 +29,7 @@ class Main : RequestStreamHandler {
                     .asString
         } catch (e: Exception){ temp.orEmpty() }
 
-        val myOutput = LambdaResult(generateData(myInput), emptyMap())
+        val myOutput = LambdaResult(generateData(myInput), mapOf("Content-Type" to "text/csv", "Content-Disposition" to "filename=dragon.csv"))
 
         output?.bufferedWriter()?.use { it.write(Gson().toJson(myOutput)) }
     }
