@@ -48,7 +48,7 @@ class Main : RequestStreamHandler {
             val item = Value(random)
             sb.append(row(blah, item))
         }
-        return sb.toString()
+        return sb.toString().trim()
     }
 
     private fun title(source: Collection<KProperty1<Value, *>>): Any {
